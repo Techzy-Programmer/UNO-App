@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
+import 'package:uno_app/screens/lobby/lobby.dart';
 
 class AuthScreen extends StatelessWidget {
   Duration get loginTime => const Duration(milliseconds: 2250);
@@ -30,7 +31,10 @@ class AuthScreen extends StatelessWidget {
       onLogin: _handleLogin,
       logoTag: "uno_logo",
       
-      onSubmitAnimationCompleted: () {
+      onSubmitAnimationCompleted: () {        
+        Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (_) => const Lobby(),
+        ));
       },
       
       theme: LoginTheme(
